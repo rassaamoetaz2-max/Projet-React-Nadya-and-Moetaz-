@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import HomePage from '../Components/HomePage'
-
+import HomePage from './Components/HomePage'
+import API from './data/API'
 //import './App.css'
 
 function App() {
