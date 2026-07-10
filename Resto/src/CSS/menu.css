@@ -15,10 +15,18 @@ width:'80%';
 padding: '20px'
 }
 
+img{width: 200px;
+height: 200px;}
 .foodsgallery{
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
    gap: 20px;
+
+}
+.foodcard{
+border-radius: 8px;
+border:5px bisque solid;
+padding: 10px;
 
 }
