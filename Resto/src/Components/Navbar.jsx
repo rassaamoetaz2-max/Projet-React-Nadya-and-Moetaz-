@@ -1,5 +1,9 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 944fc1ee8ed30118816006db4d75962ac7693024
 import '../CSS/Navbar.css'
 function Navbar() {
   return (

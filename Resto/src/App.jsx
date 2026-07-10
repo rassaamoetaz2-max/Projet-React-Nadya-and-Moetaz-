@@ -1,3 +1,7 @@
+
+
+
+
 import { useEffect, useState } from 'react'
 import HomePage from './Components/HomePage'
 import API from './data/API'
@@ -7,8 +11,12 @@ import Cart from './Components/Cart'
 import Navbar from './Components/Navbar'
 import {Routes,Route} from 'react-router-dom'
 import axios from 'axios'
+<<<<<<< HEAD
 import userAPI from './data/UserAPI'
 import Login from './Components/Login'
+=======
+
+>>>>>>> 944fc1ee8ed30118816006db4d75962ac7693024
 //import './App.css'
 
 function App() {
@@ -76,10 +84,15 @@ function App() {
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
+<<<<<<< HEAD
             <Route path="/menu" element={<Menu list={list} />} />
             <Route path="/cart" element={<Cart cart={cart} user={user}/>} />
             <Route path="/login" element={<Login loginUser={loginUser} />} />
 
+=======
+            <Route path="/menu/*" element={<Menu list={list} />} />
+            <Route path="/cart" element={<Cart />} />
+>>>>>>> 944fc1ee8ed30118816006db4d75962ac7693024
         </Routes>  
 
 
