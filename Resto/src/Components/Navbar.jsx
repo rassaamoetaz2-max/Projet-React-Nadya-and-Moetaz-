@@ -1,6 +1,5 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-<<<<<<<<< Temporary merge branch 1
 
 import '../CSS/Navbar.css'
 function Navbar() {

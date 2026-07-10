@@ -2,7 +2,7 @@ import React from 'react'
 
 function Login() {
   return (
-    <div><button onClick={()=>{Document.Location.}}></button></div>
+    <div><button onClick={()=>{}}></button></div>
   )
 }
 
