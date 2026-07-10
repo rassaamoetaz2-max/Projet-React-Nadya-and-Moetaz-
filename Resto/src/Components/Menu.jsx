@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import '../CSS/menu.css'
-import '../CSS/menu.css'
+import '../CSS/Menu.css'
 import {Routes,Route,NavLink,useParams}from 'react-router-dom'
 import FoodCard from './FoodCard'
 function Menu(props) {
