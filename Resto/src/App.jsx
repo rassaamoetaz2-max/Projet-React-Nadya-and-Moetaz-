@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import HomePage from '../Components/HomePage'
 
 //import './App.css'
 
@@ -7,7 +8,13 @@ function App() {
 
   return (
     <>
-    
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={} />
+            <Route path="/menu" element={} />
+            <Route path="/cart" element={} />
+
+        </Routes>    
     </>
   )
 }
