@@ -1,8 +1,12 @@
 import React from 'react'
-
-function FoodCard() {
+import '../CSS/menu.css'
+function FoodCard(props) {
   return (
-    <div>FoodCard</div>
+    <div className='foodcard'>
+      <h3>{props.food.name}</h3>
+    <img scr={props.food.images[0]}/>
+    <h4>{props.food.price}DT</h4>
+    </div>
   )
 }
 

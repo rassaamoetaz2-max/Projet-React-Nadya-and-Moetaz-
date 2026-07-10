@@ -1,3 +1,7 @@
+
+
+
+
 import { useEffect, useState } from 'react'
 import HomePage from './Components/HomePage'
 import API from './data/API'
@@ -7,6 +11,7 @@ import Cart from './Components/Cart'
 import Navbar from './Components/Navbar'
 import {Routes,Route} from 'react-router-dom'
 import axios from 'axios'
+
 //import './App.css'
 
 function App() {
@@ -33,7 +38,7 @@ function App() {
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
-            <Route path="/menu" element={<Menu list={list} />} />
+            <Route path="/menu/*" element={<Menu list={list} />} />
             <Route path="/cart" element={<Cart />} />
         </Routes>  
 
