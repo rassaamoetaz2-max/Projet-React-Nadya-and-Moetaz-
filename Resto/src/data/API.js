@@ -1,0 +1,1 @@
+export default API= "https://6a50e1a1c576c846dcb9fab9.mockapi.io/:endpoint"

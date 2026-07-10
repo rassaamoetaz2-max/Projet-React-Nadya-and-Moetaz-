@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 cd import { useState } from 'react'
 import HomePage from '../Components/HomePage'
 
+=======
+import { useState } from 'react'
+import HomePage from './Components/HomePage'
+import API from './data/API'
+>>>>>>> f6fa16855b0784b681fcef8185fb10a0ec8d1555
 //import './App.css'
 
 function App() {
