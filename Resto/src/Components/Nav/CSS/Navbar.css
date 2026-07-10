@@ -1,0 +1,9 @@
+.Nav{
+    background-color: grey;
+    border: black;
+    border-bottom-style: solid;
+     border-bottom-width: 2.5px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 32px;
+}
