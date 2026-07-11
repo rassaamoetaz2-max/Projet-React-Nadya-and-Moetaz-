@@ -18,7 +18,7 @@ function App() {
 
 
 
-/* get request
+//get request
   const getList= async ()=>{
     try {
         await axios.get(API).then((res)=>setList(res.data))
@@ -32,7 +32,7 @@ function App() {
 
   useEffect(()=>{getList()},[])
 //getUsers
-  /*const getUsers= async ()=>{
+  const getUsers= async ()=>{
     try {
         await axios.get(API).then((res)=>setUser(res.data))
         console.log(list);
@@ -67,7 +67,7 @@ function App() {
       
     }
   }
-*/
+
 
 
   return (
@@ -76,8 +76,8 @@ function App() {
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
-            <Route path="/menu/*" element={<Menu list={list} />} />
-            <Route path="/cart" element={<Cart cart={cart} user={user}/>} />
+            <Route path="/menu/*" element={<Menu list={list} cart={cart} setCart={setCart} />} />
+            <Route path="/cart" element={<Cart cart={cart} setCard={setCart} user={user}/>} />
            
 
         </Routes>  

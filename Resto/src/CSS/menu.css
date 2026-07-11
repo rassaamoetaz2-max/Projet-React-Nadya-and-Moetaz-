@@ -1,32 +1,118 @@
-.y{display: flex;
-gap:100px}
+.y {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f9fa; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcf9f4;
+}
+.x{display: flex;
+gap: 80px;}
 
-.sidebar{width: '20%';
-    padding:20px;
-    margin-top: 50px;
+.sidebar {
+    width: 100*px;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+}
+.menu-header {
+    margin-bottom: 35px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.menu-header h1 {
+    font-size: 2.2rem;
+    color: #1a202c;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+.menu-header p {
+    color: #718096;
+    font-size: 1.05rem;
 }
 
-.navlink{margin-top: 50px ;}
-.menuproducts{
-width:'80%';
-padding: '20px'
+.sidebar .navlink {
+    display: block;
+    padding: 14px 20px;
+    color: #495057;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-img{width: 200px;
-height: 200px;}
-.foodsgallery{
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   gap: 20px;
-
+.sidebar .navlink:hover {
+    background-color: #fff3cd; 
+    color: #ffc107;
+    transform: translateX(5px);
 }
-.foodcard{
-border-radius: 8px;
-border:5px bisque solid;
-padding: 10px;
 
+
+.sidebar .navlink.active {
+    background-color: #ff6b35; 
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+
+.productsmenu {
+    flex: 1;
+    padding: 40px;
+}
+
+.foodsgallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.foodcard {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid #edf2f7;
+}
+
+.foodcard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+.foodcard img {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    background-color: #f1f3f5;
+}
+
+
+.foodcard h3 {
+    margin: 15px 0 8px 0;
+    font-size: 1.25rem;
+    color: #2d3748;
+    font-weight: 700;
+}
+
+
+.foodcard h4 {
+    margin: auto 0 0 0;
+    font-size: 1.2rem;
+    color: #ff6b35;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
