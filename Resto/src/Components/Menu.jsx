@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import '../CSS/Menu.css'
 import {Routes,Route,NavLink,useParams}from 'react-router-dom'
 import FoodCard from './FoodCard'
-function Menu(props) {
-       const { list } = props.list;
+
+
+function Menu({list,addToCart}) {
+       // { list } = props;
   return (
     <div className='y'>
        <nav className='sidebar'>
@@ -18,15 +20,15 @@ function Menu(props) {
                 <p>اختر وجبتك المفضلة من بين أفضل المأكولات التونسية والعالمية المصنوعة بحب</p>
           </div>
            <Routes>
-                <Route path="/:categoryName" element={<FilteredProductsList list={list} />} />
-                <Route path="/" element={<FilteredProductsList list={list}  />} />
+                <Route path="/:categoryName" element={<FilteredProductsList list={list} addToCart={addToCart} />} />
+                <Route path="/" element={<FilteredProductsList list={list} addToCart={addToCart}  />} />
             
         </Routes>  
         </div>  
 
     </div>
   )}
-  function FilteredProductsList({ list}) {
+  function FilteredProductsList({ list,addToCart}) {
     
     let { categoryName } = useParams(); 
     
@@ -38,7 +40,7 @@ function Menu(props) {
     return (
         <div className='foodsgallery'>
             {
-                displayedItems.map(item => (<FoodCard key={item.id} food={item} cart={props.cart} setCart={props.setCart} /> ))
+                displayedItems.map(item => (<FoodCard key={item.id} food={item} addToCart={addToCart} /> ))
              }
         </div>
     );
