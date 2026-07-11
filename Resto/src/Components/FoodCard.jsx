@@ -1,10 +1,14 @@
 import React from 'react'
 import '../CSS/menu.css'
 function FoodCard(props) {
+
+
 const add=(y)=>{
 const nouvelle=[...props.cart,y]
 props.setCard(nouvelle)
 }
+
+
   return (
     <div className='foodcard'>
       <h3>{props.food.name}</h3>
