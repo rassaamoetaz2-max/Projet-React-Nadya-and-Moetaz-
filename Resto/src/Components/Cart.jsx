@@ -4,7 +4,7 @@ import '../CSS/Cart.css'
 function Cart({cart,user}) {
   return (
     <div>
-        {cart.map((item)=>{ <div>{item.images[0]} <div>{item.name}{}</div> </div>
+        {cart.map((item)=>{return  <div> <img src={item.images[0]}/> <div>{item.name} {item.quantity}</div> </div>
 })}
         
         <div id='total'>Total: TND</div>
