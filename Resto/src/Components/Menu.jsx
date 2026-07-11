@@ -15,6 +15,10 @@ function Menu({list,addToCart}) {
           <NavLink className="navlink" to="/menu/drink">Drinks</NavLink> 
        </nav>
         <div className='productsmenu'>
+          <div className="menu-header">
+              <h1>🍕 اكتشف قائمة الأطباق الشهية</h1>
+                <p>اختر وجبتك المفضلة من بين أفضل المأكولات التونسية والعالمية المصنوعة بحب</p>
+          </div>
            <Routes>
                 <Route path="/:categoryName" element={<FilteredProductsList list={list} addToCart={addToCart} />} />
                 <Route path="/" element={<FilteredProductsList list={list} addToCart={addToCart}  />} />

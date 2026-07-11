@@ -20,7 +20,7 @@ function App() {
   
   
 
-// get request
+//get request
   const getList= async ()=>{
     try {
         await axios.get(API).then((res)=>setList(res.data))
