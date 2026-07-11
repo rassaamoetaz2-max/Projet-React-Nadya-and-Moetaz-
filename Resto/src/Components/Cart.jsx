@@ -1,13 +1,20 @@
 import React from 'react'
 import '../CSS/Cart.css'
 
-function Cart({cart,user}) {
+function Cart({cart,setCart,user}) {
+  let s=0
+  for (let i=0;i<cart.length;i++){
+    s+=cart[i].price
+  }
+  const remove=(y)=>{
+          setCart(card.filter((item)=>item.title!=y.title))
+
+  }
   return (
     <div>
-        {cart.map((item)=>{ <div>{item.images[0]} <div>{item.name}{}</div> </div>
-})}
+        {cart.map((item)=>{ <div>{item.name} :     {item.price}    <bouton onClick={()=>remove(item)}>Remove</bouton></div> })}
         
-        <div id='total'>Total: TND</div>
+        <div id='total'>Total:{s} TND</div>
     </div>
   )
 }
@@ -17,9 +24,3 @@ export default Cart
 //const [foodToDisplay,setFoodToDisplay] = useState("")
 
 
-/* enti maak bech taamel list.map((item){w taffichi hne walle?}) */
-// ki taamel fel button: onClick(()=>{setFoodToDisplay(ism el category)})
-
-
-
-//le mela aamel kima mestensa dm1 taw nriglouh ken tfa923edtli el afte

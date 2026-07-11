@@ -8,7 +8,7 @@ import Navbar from './Components/Navbar'
 import {Routes,Route} from 'react-router-dom'
 import axios from 'axios'
 import userAPI from './data/UserAPI'
-import Login from './Components/Login'
+
 //import './App.css'
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
 
 
 
-// get request
+//get request
   const getList= async ()=>{
     try {
         await axios.get(API).then((res)=>setList(res.data))
@@ -76,9 +76,9 @@ function App() {
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
-            <Route path="/menu" element={<Menu list={list} />} />
-            <Route path="/cart" element={<Cart cart={cart} user={user}/>} />
-            <Route path="/login" element={<Login loginUser={loginUser} />} />
+            <Route path="/menu/*" element={<Menu list={list} cart={cart} setCart={setCart} />} />
+            <Route path="/cart" element={<Cart cart={cart} setCard={setCart} user={user}/>} />
+           
 
         </Routes>  
 
