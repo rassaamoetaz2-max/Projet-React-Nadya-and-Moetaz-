@@ -1,0 +1,111 @@
+
+.homepage-container {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl; 
+    text-align: center;
+    color: #2d3748;
+  }
+
+  .hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .brand-name {
+    color: #e44d26;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+  
+  
+  .cta-btn {
+    background-color: #e44d26;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 15px rgba(228, 77, 38, 0.4);
+  }
+  
+  .cta-btn:hover {
+    background-color: #c63c1a;
+    transform: translateY(-2px);
+  }
+  
+ 
+  .services-section {
+    padding: 60px 20px;
+    background-color: #f7fafc;
+  }
+  
+  .services-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    width: 300px;
+    transition: transform 0.2s;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #1a202c;
+  }
+  
+  .service-card p {
+    font-size: 0.95rem;
+    color: #718096;
+    line-height: 1.6;
+  }
+  
+  /* 3. قسم أوقات العمل والمعلومات */
+  .info-section {
+    background-color: #2d3748;
+    color: #a0aec0;
+    padding: 30px 20px;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
