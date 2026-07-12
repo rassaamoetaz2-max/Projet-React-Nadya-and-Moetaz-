@@ -24,8 +24,7 @@ function FoodCard({key,food,addToCart,getList}) {
 
   }
   const remove=async(id)=>{try{
-      console.log(id)
-    await axios.delete(`${API}/${id}`)
+      await axios.delete(`${API}/${id}`)
     getList()
 }
 catch(error){console.log(error)}
