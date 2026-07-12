@@ -163,8 +163,8 @@ const createUser = async (email,username,password)=>{
     }
   } 
 
-const isUser=()=>{
-
+const isAnAdmin=()=>{
+    return user.isAdmin
 }
 
   return (
@@ -177,7 +177,7 @@ const isUser=()=>{
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/cart" element={<Cart cart={cart} setCart={setCart} user={user}/>} /> 
-            <Route path="/menu/*" element={<Menu list={list} addToCart={addToCart} setList={setList} getList={getList}/>} />
+            <Route path="/menu/*" element={<Menu isAnAdmin={isAnAdmin} list={list} addToCart={addToCart} setList={setList} getList={getList}/>} />
 
 
 
