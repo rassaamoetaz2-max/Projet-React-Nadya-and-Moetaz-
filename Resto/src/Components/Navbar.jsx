@@ -24,7 +24,7 @@ function Navbar({user,logOut,setMode}) {
           <a href="/" onClick={()=>{logOut()}}>log Out</a>
           </div> } 
             
-
+           </div>
 
 
     </nav></div>
