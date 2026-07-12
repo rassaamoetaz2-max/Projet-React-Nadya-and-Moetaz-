@@ -4,7 +4,7 @@ import {Routes,Route,NavLink,useParams}from 'react-router-dom'
 import FoodCard from './FoodCard'
 
 
-function Menu({list,addToCart}) {
+function Menu({list,addToCart,setList,getList}) {
        // { list } = props;
   return (
     <div className='y'>
@@ -20,15 +20,15 @@ function Menu({list,addToCart}) {
                 <p>اختر وجبتك المفضلة من بين أفضل المأكولات التونسية والعالمية المصنوعة بحب</p>
           </div>
            <Routes>
-                <Route path="/:categoryName" element={<FilteredProductsList list={list} addToCart={addToCart} />} />
-                <Route path="/" element={<FilteredProductsList list={list} addToCart={addToCart}  />} />
+                <Route path="/:categoryName" element={<FilteredProductsList list={list} addToCart={addToCart}  />} />
+                <Route path="/" element={<FilteredProductsList list={list} addToCart={addToCart}  getList={getList} />} />
             
         </Routes>  
         </div>  
 
     </div>
   )}
-  function FilteredProductsList({ list,addToCart}) {
+  function FilteredProductsList({ list,addToCart,getList}) {
     
     let { categoryName } = useParams(); 
     
@@ -40,7 +40,7 @@ function Menu({list,addToCart}) {
     return (
         <div className='foodsgallery'>
             {
-                displayedItems.map(item => (<FoodCard key={item.id} food={item} addToCart={addToCart} /> ))
+                displayedItems.map(item => (<FoodCard key={item.id}  food={item} addToCart={addToCart}  getList={getList}  /> ))
              }
         </div>
     );

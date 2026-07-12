@@ -1,1 +1,2 @@
-export default  "https://6a516392c576c846dcba52fd.mockapi.io/Foods"
+const API= "https://6a50e1a1c576c846dcb9fab9.mockapi.io/Resto"
+export default API

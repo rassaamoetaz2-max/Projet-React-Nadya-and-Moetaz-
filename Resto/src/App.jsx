@@ -144,7 +144,7 @@ function App() {
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
-            <Route path="/menu" element={<Menu list={list} addToCart={addToCart} />} />
+            <Route path="/menu/*" element={<Menu list={list} addToCart={addToCart} setList={setList} getList={getList}/>} />
             <Route path="/cart" element={<Cart cart={cart} user={user}/>} />
             <Route path="/login" element={<Login mode={mode} loginUser={loginUser} createUser={createUser} />} />
 
