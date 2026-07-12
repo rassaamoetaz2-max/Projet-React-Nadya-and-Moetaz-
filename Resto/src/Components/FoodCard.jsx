@@ -9,8 +9,8 @@ function FoodCard({key,food,addToCart,getList}) {
   const[updating, setupdating]=useState(false)
   const[price,setprice]=useState(food.price)
 
- let  isAdmin=false
- let isUser=true
+ let  isAdmin=true
+ 
  
   const afficher=()=>{
           setupdating(prev=>!prev)
@@ -70,7 +70,7 @@ function FoodCard({key,food,addToCart,getList}) {
     <img src={food.image[0]}/>
     <h4>{food.price}DT</h4>
 
-    <div>{isUser?<button onClick={()=>addToCart(food)}>Add To Cart</button>:""}</div>
+    <div>{!isAdmin?<button onClick={()=>addToCart(food)}>Add To Cart</button>:""}</div>
 
     {isAdmin? (< div className='admin-buttons'><button onClick={()=>remove(food.id)}>Remove</button>
                 <button onClick={()=>afficher()}>Edit</button>
