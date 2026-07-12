@@ -70,7 +70,7 @@ const AddFood = () => {
           <NavLink className="navlink" to="/menu/drink">Drinks</NavLink> 
        </nav>
         <div className='productsmenu'>
-          <div> Allergies</div>
+         
           <div className="menu-header">
             
               <h1>🍕 اكتشف قائمة الأطباق الشهية</h1>
