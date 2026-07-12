@@ -176,10 +176,10 @@ const isUser=()=>{
       
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
-            <Route path="/menu/*" element={<Menu isUser={user.isAdmin} list={list} addToCart={addToCart} />} />
-            <Route path="/cart" element={<Cart cart={cart} setCart={setCart} user={user}/>} />
+            <Route path="/cart" element={<Cart cart={cart} setCart={setCart} user={user}/>} /> 
+            <Route path="/menu/*" element={<Menu list={list} addToCart={addToCart} setList={setList} getList={getList}/>} />
 
-       
+
 
      
     </Route>
