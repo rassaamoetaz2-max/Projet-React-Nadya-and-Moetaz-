@@ -1,9 +1,9 @@
 .y {
     display: flex;
     min-height: 100vh;
-    background-color: #f8f9fa; 
+     background: 'transparent';
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fcf9f4;
+
 }
 .x{display: flex;
 gap: 80px;}

@@ -1,0 +1,20 @@
+#arrow{
+/*transition:0.5 ease;
+    transform: rotate(180deg);*/
+}
+
+.dropdown-area{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  /*  background-color: blue;*/  /*very interesting try it like so,why does it do that*/
+      padding: 5px 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.buttn-open{
+    border: rgb(147,197,253) 2px solid ;
+}

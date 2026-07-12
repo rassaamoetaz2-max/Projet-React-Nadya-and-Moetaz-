@@ -1,26 +1,81 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
+import React, { useState } from "react";
+import "../CSS/Login.css";
 
-
-function Login({mode,loginUser,createUser}) {
-    const [userName,setUserName]=useState("") 
-    const [password,setPassword]=useState("") 
-
-  
+function Login({ mode, loginUser, createUser }) {
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
   return (
-    <div>
-    <div>hey</div>
-    <form onSubmit={()=>{/*mode==="login" ? loginUser(userName,password): mode==="create"?createUser(userName,password):null;*/loginUser(userName,password)}}>
-      <label>Username/Email</label>
-      <input type="text" value={userName} onChange={(e)=>{setUserName(e.target.value)}} />
-      <label>Password:</label>
-      <input type="text" value={password} onChange={(e)=>{setPassword(e.target.value)}} />
-      {mode==="login"?    <button>submit</button>: <button>create Account</button> }
- 
-      </form>
+    <div className="login-page">
+      <div className="login-card">
+
+        <h1 className="login-title">
+          {mode === "login" ? "Welcome Back" : "Create Account"}
+        </h1>
+
+        <p className="login-subtitle">
+          {mode === "login"
+            ? "Sign in to continue."
+            : "Fill in your information below."}
+        </p>
+
+        <form
+          className="login-form"
+          onSubmit={(e) => {
+            e.preventDefault();
+             if (mode === "login") {
+      loginUser(email, password);
+    } else {
+      createUser(email,userName ,password);
+    }
+            
+           
+          }}
+        >
+          {mode !== "login" ? (
+            <div className="input-group">
+              <label>Username</label>
+              <input
+                type="text"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+              />
+            </div>
+          ):null}
+
+          <div className="input-group">
+            <label>Email</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <button className="submit-btn">
+            {mode === "login" ? "Login" : "Create Account"}
+          </button>
+        </form>
+
+        <div className="terms">
+          By proceeding you agree to our <strong>Terms and Conditions</strong>,
+          <strong> Privacy Statement</strong>, and
+          <strong> Cookie Policy</strong>.
+        </div>
+
+      </div>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

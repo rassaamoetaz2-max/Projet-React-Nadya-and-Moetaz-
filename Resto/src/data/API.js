@@ -1,1 +1,1 @@
-export default  "https://6a516392c576c846dcba52fd.mockapi.io/Foods"
+export default  "https://6a50e19cc576c846dcb9fab2.mockapi.io/resto"
