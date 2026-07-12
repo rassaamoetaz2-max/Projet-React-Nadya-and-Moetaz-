@@ -164,7 +164,7 @@ const createUser = async (email,username,password)=>{
   } 
 
 const isAnAdmin=()=>{
-    return Object.keys(user).length===0? false:user.isAdmin
+    return user.isAdmin
 }
 
   return (
