@@ -70,18 +70,13 @@ const AddFood = () => {
           <NavLink className="navlink" to="/menu/drink">Drinks</NavLink> 
        </nav>
         <div className='productsmenu'>
+          <div> Allergies</div>
           <div className="menu-header">
+            
               <h1>🍕 اكتشف قائمة الأطباق الشهية</h1>
                 <p>اختر وجبتك المفضلة من بين أفضل المأكولات التونسية والعالمية المصنوعة بحب</p>
           </div>
-          
-          {isAdmin && (
-             <div className="add-food-container">
-                <button className="add-food-btn" onClick={AddFood}>
-                 ➕ Ajouter un nouveau plat
-                </button>
-              </div>
-              )}
+
            <Routes>
                 <Route path="/:categoryName" element={<FilteredProductsList list={list} addToCart={addToCart}  />} />
                 <Route path="/" element={<FilteredProductsList list={list} addToCart={addToCart}  getList={getList} />} />

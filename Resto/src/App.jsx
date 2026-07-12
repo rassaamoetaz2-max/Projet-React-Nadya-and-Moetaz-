@@ -9,16 +9,20 @@ import {Routes,Route} from 'react-router-dom'
 import axios from 'axios'
 import usersAPI from './data/UserAPI'
 import Login from './Components/Login'
+import Layout from './Components/Layout'
 //import './App.css'
+import { useNavigate } from 'react-router-dom';
+
 
 function App() {
+  
   const [user,setUser]=useState({}) 
   const [cart,setCart] =useState([])
   const [list, setList] = useState([])
   const [mode, setMode] = useState("");
 
   
-  
+const navigate = useNavigate();
 
 //get request
   const getList= async ()=>{
@@ -60,22 +64,28 @@ function App() {
 
 
  //login
-    const loginUser = async (username,password)=>{
+ /*   const loginUser = async (email,username,password)=>{
     try {
        //setUser(thisUser);
+
       if(mode==="login")  {
-        const thisUser = await axios.get(usersAPI).then((res)=>res.data.find((user)=>user.email===username&&user.password===password))
+      /*  const thisUser = await axios.get(usersAPI).then((res)=>res.data.find((user)=>user.email===email&&user.password===password))*/
+      /*  const response = await axios.get(usersAPI);
+
+const thisUser = response.data.find(
+    (user)=>user.Email===email && user.password===password
+);
         if(thisUser===undefined)
           console.log("Pass or email wrong baka");
         else{
-          navigate("/")
           setCart(thisUser.currentOrders)
-           setUser(thisUser);}}
+           setUser(thisUser);
+            navigate("/") }}
       else{
-        const thisUser = await axios.post(usersAPI ,{username:username,password:password})
+        const thisUser = await axios.post(usersAPI ,{email:email,username:username,password:password,currentOrders:cart,pastOrders:[],isAdmin:false})
         setMode("login")
-        navigate("/")
-        setUser(thisUser);
+        setUser(thisUser.data);
+       navigate("/")
       }   
          
      
@@ -86,17 +96,25 @@ function App() {
       console.log("error is :"+error);
       
     }
-  }
+  }*/
 
-  /*     const loginUser = async (username,password)=>{
-    try {
+  const loginUser = async (email,password)=>{
+  
       
-        const thisUser = await axios.get(usersAPI).then((res)=>res.data.find((user)=>(user.username===username||user.email===username)&&user.password===password))
-        if(thisUser===undefined)
-          console.log("Pass or email wrong baka");
-        else{
-          setCart(thisUser.currentOrders)
-          setUser(thisUser);}
+ try {
+    const response = await axios.get(usersAPI);
+
+    const thisUser = response.data.find(
+      (user) => user.Email === email && user.password === password
+    );
+
+    if (thisUser === undefined) {
+      console.log("Pass or email wrong baka");
+    } else {
+      setCart(thisUser.currentOrders);
+      setUser(thisUser);
+      navigate("/");
+    }
         
         
         
@@ -105,14 +123,23 @@ function App() {
       console.log("error is :"+error);
       
     }
-  } */
+  } 
   
-   const createUser = async (username,password)=>{
+const createUser = async (email,username,password)=>{
+
     try {
-        const thisUser = await axios.post(usersAPI ,{username:username,password:password})
-        setUser(thisUser)
-        setMode("login")
-        navigate("/")
+      const response = await axios.post(usersAPI, {
+      email: email,
+      username: username,
+      password: password,
+      currentOrders: cart,
+      pastOrders: [],
+      isAdmin: false
+    });
+
+    setMode("login");
+    setUser(response.data);
+    navigate("/");
         
         
         
@@ -136,21 +163,31 @@ function App() {
     }
   } 
 
+const isUser=()=>{
 
+}
 
   return (
     <><div>
-      <Navbar user={user} logOut={logOut} setMode={setMode} />
-        <Routes>
+    <Routes>  
+     <Route path="/login" element={<Login mode={mode} loginUser={loginUser} createUser={createUser} />} />
+
+    <Route element={<Layout user={user} logOut={logOut} setMode={setMode} /> } >
+      
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
+            <Route path="/cart" element={<Cart cart={cart} setCart={setCart} user={user}/>} /> 
             <Route path="/menu/*" element={<Menu list={list} addToCart={addToCart} setList={setList} getList={getList}/>} />
-            <Route path="/cart" element={<Cart cart={cart} user={user}/>} />
-            <Route path="/login" element={<Login mode={mode} loginUser={loginUser} createUser={createUser} />} />
-
-        </Routes>  
 
 
+
+     
+    </Route>
+
+      
+        
+
+       </Routes>    
      </div>     
     </>
   )

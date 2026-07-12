@@ -1,20 +1,28 @@
 .Nav{
     background-color: #ffffff;
     border-bottom: 1px solid #e2e8f0;
-     border-bottom-width: 2.5px;
+    border-bottom-width: 2.5px;
     display: flex;
     align-items: center;
     padding: 15px 5%;
     justify-content: space-between;
     box-shadow:0 4px 12px rgba(0,0,0,0.03);
 }
-nav-links a{font-size: 1.05rem;
-font-weight: 600;
-padding-left: 6px 12px;
-transition: color 0.3s ease;}
 
 
-nav-links a:hover{color:#ff6b35}
+.nav-links a{
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    transition: color 0.3s ease;
+}
+
+
+.nav-links a:hover{
+    color:#ff6b35;
+}
+
+
 .logo-container {
     display: flex;
     flex-direction: column;

@@ -2,3 +2,90 @@
     display:flex;
     justify-content: flex-end;
 }
+
+
+.cart {
+  padding: 40px 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  /*max-width: 800px;*/
+  width: 700px;
+  
+
+}
+
+
+
+.items{
+  padding: 40px 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  /*max-width: 800px;*/
+  width: 220px;
+  margin-top:-60px ;    
+  margin-left:120px ;  
+  position: sticky;
+}
+
+.cart-page{
+    margin-top: 150px ;
+    margin-left:120px ; ;
+    display:inline-flex;
+    justify-content: space-around;
+}
+
+.img{
+    width: 100px;
+    height: 100px;
+}
+
+.item,.item-details {
+    display:flex ;
+    align-items: center;
+    font-size:15px ;
+}
+
+.item-details{
+    margin-right: 300px;
+}
+
+
+#remove{
+    display:block;
+}
+
+
+
+.counter{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    background:#ff7b00;
+    color:white;
+
+    border-radius:25px;
+    padding:6px 12px;
+
+    width:120px;
+    justify-content:space-between;
+}
+
+.counter button{
+    border:none;
+    background:white;
+    color:#ff7b00;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    font-size:20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.counter span{
+    font-size:18px;
+    font-weight:bold;
+}
