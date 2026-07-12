@@ -12,7 +12,7 @@ function Cart({cart,setCart,user}) {
   }
   return (
     <div>
-        {cart.map((item)=>{ <div>{item.name} :     {item.price}    <bouton onClick={()=>remove(item)}>Remove</bouton></div> })}
+        {cart.map((item)=>( <div>{item.name} :     {item.price}    <bouton onClick={()=>remove(item)}>Remove</bouton></div> ))}
         
         <div id='total'>Total:{s} TND</div>
     </div>

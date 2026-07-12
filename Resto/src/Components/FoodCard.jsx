@@ -2,34 +2,68 @@ import React, { useState } from 'react'
 import '../CSS/menu.css'
 import axios  from 'axios'
 import API from '../data/API'
+import Swal from 'sweetalert2'
 function FoodCard({key,food,addToCart,getList}) {
 
 
   const[updating, setupdating]=useState(false)
   const[price,setprice]=useState(food.price)
 
- let  isAdmin=true
- let isUser=false
+ let  isAdmin=false
+ let isUser=true
+ 
   const afficher=()=>{
-    setupdating(!updating)
+          setupdating(prev=>!prev)
   }
 
-  const edit=async(id)=>{try{
-                    await axios.put(API/`${id}`,{price:price})
-                    getList()
-                    setupdating(!updating)
-
-  }
-  catch(error){console.log(error)}
-
-  }
-  const remove=async(id)=>{try{
-      await axios.delete(`${API}/${id}`)
-    getList()
-}
-catch(error){console.log(error)}
-
-}
+  const edit=async(id)=>{
+    Swal.fire({
+      title: 'تأكيد تغيير السعر',
+      text: "هل تريد تغيير السعر إلى "+`${price}`+"DT؟",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#2d3748',
+      cancelButtonColor: '#4a5568',
+      confirmButtonText: 'تعديل',
+      cancelButtonText: 'إلغاء'
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await axios.put(`${API}/${id}`, { price: price });
+          getList();
+          setupdating(!updating);
+          Swal.fire('تم التعديل!', 'تم تحديث السعر بنجاح.', 'success');
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    });
+  };
+  const remove = async (id) => {
+    Swal.fire({
+      title: 'هل أنت متأكد؟',
+      text: "تريد حذف هذا الطبق نهائيًا؟",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#ff4d4d', 
+      cancelButtonColor: '#4a5568',   
+      confirmButtonText: 'نعم، احذف!',
+      cancelButtonText: 'إلغاء'
+    }).then(async (result) => {
+    
+      if (result.isConfirmed) {
+        try {
+          await axios.delete(`${API}/${id}`);
+          getList();
+        
+          Swal.fire('تم الحذف!', 'تم حذف الطبق بنجاح.', 'success');
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    });
+  
+  };
   return (
     <div className='foodcard'>
       <h3>{food.name}</h3>
