@@ -7,9 +7,9 @@ import axios from 'axios'
 import API from '../data/API'
 
 
-function Menu({list,addToCart,setList,getList}) {
+function Menu({isAnAdmin,list,addToCart,setList,getList}) {
        // { list } = props;
-      const isAdmin=false
+      const isAdmin=isAnAdmin()
 
 const AddFood = () => {
   Swal.fire({
@@ -78,15 +78,15 @@ const AddFood = () => {
           </div>
 
            <Routes>
-                <Route path="/:categoryName" element={<FilteredProductsList list={list} addToCart={addToCart}  />} />
-                <Route path="/" element={<FilteredProductsList list={list} addToCart={addToCart}  getList={getList} />} />
+                <Route path="/:categoryName" element={<FilteredProductsList isAnAdmin={isAnAdmin} list={list} addToCart={addToCart}  />} />
+                <Route path="/" element={<FilteredProductsList isAnAdmin={isAnAdmin} list={list} addToCart={addToCart}  getList={getList} />} />
             
         </Routes>  
         </div>  
 
     </div>
   )}
-  function FilteredProductsList({ list,addToCart,getList}) {
+  function FilteredProductsList({ isAnAdmin,list,addToCart,getList}) {
     
     let { categoryName } = useParams(); 
     
@@ -98,7 +98,7 @@ const AddFood = () => {
     return (
         <div className='foodsgallery'>
             {
-                displayedItems.map(item => (<FoodCard key={item.id}  food={item} addToCart={addToCart}  getList={getList}  /> ))
+                displayedItems.map(item => (<FoodCard isAnAdmin={isAnAdmin} key={item.id}  food={item} addToCart={addToCart}  getList={getList}  /> ))
              }
         </div>
     );

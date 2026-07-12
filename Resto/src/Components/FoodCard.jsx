@@ -3,14 +3,14 @@ import '../CSS/menu.css'
 import axios  from 'axios'
 import API from '../data/API'
 import Swal from 'sweetalert2'
-function FoodCard({key,food,addToCart,getList}) {
+function FoodCard({isAnAdmin,key,food,addToCart,getList}) {
 
 
   const[updating, setupdating]=useState(false)
   const[price,setprice]=useState(food.price)
 
- let  isAdmin=false
- let isUser=true
+ let  isAdmin=isAnAdmin()
+ let isUser=isAnAdmin()
  
   const afficher=()=>{
           setupdating(prev=>!prev)
