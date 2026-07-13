@@ -26,7 +26,9 @@ function App() {
   const [mode, setMode] = useState("");
 
 
-
+useEffect(() => {
+    localStorage.setItem('currentUser', JSON.stringify(user));
+  }, [user])
 useEffect(() => {
   localStorage.setItem("cart", JSON.stringify(cart));
 }, [cart]);
@@ -42,9 +44,7 @@ useEffect(() => {
     }
   }, [cart]);*/
 
-  /*useEffect(() => {
-    localStorage.setItem('currentUser', JSON.stringify(user));
-  }, [user]);*/
+  /*;*/
   
 const navigate = useNavigate();
 
@@ -138,6 +138,7 @@ const thisUser = response.data.find(
  try {
     const response = await axios.get(usersAPI);
 
+    
     const thisUser = response.data.find(
       (user) => user.Email === email && user.password === password
     );
@@ -160,6 +161,14 @@ const thisUser = response.data.find(
   } 
   
 const createUser = async (email,username,password)=>{
+   const response1 = await axios.get(usersAPI);
+     if(response1.data.find((user)=>user.Email===email)!==undefined){
+        alert("acoount already exists");
+        return;
+     } 
+    const thisUser = response1.data.find(
+      (user) => user.Email === email && user.password === password
+    );
 
     try {
       const response = await axios.post(usersAPI, {
