@@ -8,6 +8,8 @@ function FoodCard({isAnAdmin,key,food,addToCart,getList}) {
 
   const[updating, setupdating]=useState(false)
   const[price,setprice]=useState(food.price)
+  const[category,setCategory]=useState("")
+
 
  let  isAdmin=isAnAdmin()
  let isUser=isAnAdmin()
@@ -29,7 +31,7 @@ function FoodCard({isAnAdmin,key,food,addToCart,getList}) {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.put(`${API}/${id}`, { price: price });
+          await axios.put(`${API}/${id}`, { price: price, category:category });
           getList();
           setupdating(!updating);
           Swal.fire('تم التعديل!', 'تم تحديث السعر بنجاح.', 'success');
@@ -77,6 +79,8 @@ function FoodCard({isAnAdmin,key,food,addToCart,getList}) {
               </div>):""}
     {updating?<>Prix
                  <input type="number"  value={price} onChange={(event)=>setprice(event.target.value)}/>
+                 Category 
+                  <input type="text"  value={category} onChange={(event)=>setCategory(event.target.value)}/>
                 <button onClick={()=>edit(food.id)}>Edit Price</button></>:""}
     </div>
     
