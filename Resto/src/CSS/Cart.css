@@ -1,91 +1,93 @@
-#total{
-    display:flex;
-    justify-content: flex-end;
+
+.cart-page {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 90px; 
 }
 
-
-.cart {
-  padding: 40px 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  /*max-width: 800px;*/
-  width: 700px;
-  
-
+.cart, .items {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
 }
 
+.cart { width: 500px; }
+.items { width: 350px; }
 
+h3 { margin-top: 0; color: #333; }
 
-.items{
-  padding: 40px 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  /*max-width: 800px;*/
-  width: 220px;
-  margin-top:-60px ;    
-  margin-left:120px ;  
-  position: sticky;
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
 
-.cart-page{
-    margin-top: 150px ;
-    margin-left:120px ; ;
-    display:inline-flex;
-    justify-content: space-around;
+.input input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
 }
 
-.img{
-    width: 100px;
-    height: 100px;
+.pay {
+    background: #eef9f2;
+    padding: 10px;
+    border-left: 4px solid #2ecc71;
+    border-radius: 4px;
 }
 
-.item,.item-details {
-    display:flex ;
+.map { margin-top: 20px; }
+
+.compact-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
     align-items: center;
-    font-size:15px ;
 }
 
-.item-details{
-    margin-right: 300px;
+.item-left-side { display: flex; gap: 10px; }
+.qty { color: #ff7b00; font-weight: bold; }
+
+.item-right-side { display: flex; gap: 8px; align-items: center; }
+.item-right-side button {
+    padding: 2px 6px;
+    cursor: pointer;
+    background: #eee;
+    border: none;
+    border-radius: 3px;
 }
 
+.item-right-side .del { color: red; background: none; }
 
-#remove{
-    display:block;
+.totals {
+    background: #fcfcfc;
+    padding: 15px 0;
+    margin-top: 15px;
+    font-size: 14px;
 }
 
-
-
-.counter{
-    display:flex;
-    align-items:center;
-    gap:15px;
-
-    background:#ff7b00;
-    color:white;
-
-    border-radius:25px;
-    padding:6px 12px;
-
-    width:120px;
-    justify-content:space-between;
+.total {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #ff7b00;
 }
 
-.counter button{
-    border:none;
-    background:white;
-    color:#ff7b00;
-    width:28px;
-    height:28px;
-    border-radius:50%;
-    font-size:20px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.counter span{
-    font-size:18px;
-    font-weight:bold;
+.submitOrder {
+    width: 100%;
+    padding: 12px;
+    background: #ff7b00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
 }

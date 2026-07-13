@@ -3,14 +3,14 @@ import '../CSS/menu.css'
 import axios  from 'axios'
 import API from '../data/API'
 import Swal from 'sweetalert2'
-function FoodCard({key,food,addToCart,getList}) {
+function FoodCard({isAnAdmin,key,food,addToCart,getList}) {
 
 
   const[updating, setupdating]=useState(false)
   const[price,setprice]=useState(food.price)
 
- let  isAdmin=true
- 
+ let  isAdmin=isAnAdmin()
+ let isUser=isAnAdmin()
  
   const afficher=()=>{
           setupdating(prev=>!prev)
@@ -70,7 +70,7 @@ function FoodCard({key,food,addToCart,getList}) {
     <img src={food.image[0]}/>
     <h4>{food.price}DT</h4>
 
-    <div>{!isAdmin?<button onClick={()=>addToCart(food)}>Add To Cart</button>:""}</div>
+    <div>{!isAdmin?<button onClick={(e)=>{e.preventDefault(); addToCart(food)}}>Add To Cart</button>:""}</div>
 
     {isAdmin? (< div className='admin-buttons'><button onClick={()=>remove(food.id)}>Remove</button>
                 <button onClick={()=>afficher()}>Edit</button>
