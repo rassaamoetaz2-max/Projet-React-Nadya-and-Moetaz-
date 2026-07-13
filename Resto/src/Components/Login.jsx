@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import "../CSS/Login.css";
-
+import Footer from "./Footer";
+import LoginHeader from "./LoginHeader";
 function Login({ mode, loginUser, createUser }) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
   return (
-    <div className="login-page">
+    <div>
+      <LoginHeader></LoginHeader>
+
+      <div className="login-page">
       <div className="login-card">
 
         <h1 className="login-title">
@@ -75,6 +79,9 @@ function Login({ mode, loginUser, createUser }) {
 
       </div>
     </div>
+    <Footer></Footer>
+    </div>
+    
   );
 }
 

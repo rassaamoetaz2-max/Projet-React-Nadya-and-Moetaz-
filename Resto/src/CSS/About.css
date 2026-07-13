@@ -31,35 +31,34 @@
 }*/
 
 
-.about-container {
-  font-family: 'Georgia', serif; /* A classic font that works great for restaurants */
-  max-width: 1000px;
+.bigAbout {
+  font-family: 'Georgia', serif;
   margin: 0 auto;
   padding: 20px;
   color: #2c2c2c;
   text-align: center;
 }
 
-.about-hero {
+.Story {
   padding: 80px 20px;
-  background-color: #f5eedc; /* Warm, welcoming tone */
+  background-color: #f5eedc; 
   border-radius: 12px;
   margin-bottom: 40px;
 }
 
-.about-hero h1 {
+.Story h1 {
   font-size: 2.8rem;
   margin-bottom: 12px;
-  color: #8b4513; /* Warm wood/earth tone */
+  color: #8b4513; 
 }
 
-.about-hero p {
+.Story p {
   font-size: 1.2rem;
   font-style: italic;
   margin: 0;
 }
 
-.about-mission {
+.mission {
   margin-bottom: 50px;
   max-width: 650px;
   margin-left: auto;
@@ -68,12 +67,12 @@
   font-size: 1.1rem;
 }
 
-.about-mission h2 {
+.mission h2 {
   color: #8b4513;
   margin-bottom: 15px;
 }
 
-.team-grid {
+.team {
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -81,7 +80,7 @@
   margin-top: 20px;
 }
 
-.team-card {
+.teammate {
   background: #fdfbf7;
   border: 1px solid #e6dfd3;
   border-radius: 12px;
@@ -90,21 +89,21 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.02);
 }
 
-.team-card img {
+.teammate img {
   width: 140px;
   height: 140px;
-  border-radius: 50%;
-  object-fit: cover; /* Keeps chef photos from stretching */
+  border-radius: 70%;
+  object-fit: cover; 
   margin-bottom: 15px;
   border: 3px solid #f5eedc;
 }
 
-.team-card h3 {
+.teammate h3 {
   margin: 10px 0 5px 0;
   font-size: 1.3rem;
 }
 
-.team-card p {
+.teammatep {
   color: #666;
   font-size: 0.95rem;
   margin: 0;
