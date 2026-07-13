@@ -11,10 +11,10 @@ function Layout({ user, logOut, setMode }) {
     flexDirection: 'column',
     margin: 0,
     padding: 0
-  };
+  }
 
   return (
-    <div style={layoutStyle}>
+    <div /*className="layout"*/ style={layoutStyle}>
       <Navbar user={user} logOut={logOut} setMode={setMode} />
       <Outlet />
       <Footer></Footer>
