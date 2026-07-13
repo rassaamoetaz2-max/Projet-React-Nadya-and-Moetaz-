@@ -15,7 +15,8 @@ function Navbar({user,logOut,setMode}) {
           <NavLink to="/menu">Menu</NavLink>  
           <NavLink to="/cart">Cart</NavLink> 
       
-          {Object.keys(user).length===0?    <div> <NavLink to="/login" onClick={()=>{setMode("login")}} >Login</NavLink>  
+          {Object.keys(user).length===0?    
+          <div> <NavLink to="/login" onClick={()=>{setMode("login")}} >Login</NavLink>  
           
           <NavLink to="/login" onClick={()=>{setMode("create")}}>Create Account</NavLink> </div>
           :
