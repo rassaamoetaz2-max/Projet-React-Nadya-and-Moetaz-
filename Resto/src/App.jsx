@@ -18,10 +18,18 @@ function App() {
   
   const [user,setUser]=useState(()=> { const savedUser = localStorage.getItem('currentUser');
   return savedUser ? JSON.parse(savedUser) : {};}) 
-  const [cart,setCart] =useState(/*()=>{ const savedUser = localStorage.getItem('currentUser');
-  return savedUser ? JSON.parse(savedUser).currentOrders  :[]}*/[])
+  const [cart, setCart] = useState(() => {
+  const savedCart = localStorage.getItem("cart");
+  return savedCart ? JSON.parse(savedCart) : [];
+}); 
   const [list, setList] = useState([])
   const [mode, setMode] = useState("");
+
+
+
+useEffect(() => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}, [cart]);
 
  /* useEffect(async ()=>{
     try {
@@ -34,9 +42,9 @@ function App() {
     }
   }, [cart]);*/
 
-  useEffect(() => {
+  /*useEffect(() => {
     localStorage.setItem('currentUser', JSON.stringify(user));
-  }, [user]);
+  }, [user]);*/
   
 const navigate = useNavigate();
 
@@ -135,7 +143,7 @@ const thisUser = response.data.find(
     );
 
     if (thisUser === undefined) {
-      console.log("Pass or email wrong baka");
+      alert("Wrong email or password");
     } else {
       //setCart(thisUser.currentOrders);
       setUser(thisUser);
@@ -155,7 +163,7 @@ const createUser = async (email,username,password)=>{
 
     try {
       const response = await axios.post(usersAPI, {
-      email: email,
+      Email: email,
       username: username,
       password: password,
       currentOrders: cart,
