@@ -20,7 +20,7 @@ function Navbar({user,logOut,setMode}) {
           
           <NavLink to="/login" onClick={()=>{setMode("create")}}>Create Account</NavLink> </div>
           :
-           <div><div>  Welcome+{ user.username  } </div>  
+           <div><div>  Welcome { user.username  } </div>  
           <a href="/" onClick={()=>{logOut()}}>log Out</a>
           </div> } 
             

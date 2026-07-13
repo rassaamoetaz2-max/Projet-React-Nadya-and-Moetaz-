@@ -1,20 +1,27 @@
-.Nav{
-    background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    border-bottom-width: 2.5px;
+
+    .Nav {
+        background-color: #ffffff !important; 
+        border-bottom: 2px solid #ff6b35;
+        border-top: none;
+        border-left: none;
+        border-right: none;
     display: flex;
     align-items: center;
     padding: 15px 5%;
     justify-content: space-between;
-    box-shadow:0 4px 12px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.05); 
+    box-sizing: border-box;
+    width: 100%;
 }
 
 
 .nav-links a{
+    text-decoration: none;
+    color: #2d3748; 
     font-size: 1.05rem;
     font-weight: 600;
-    padding: 6px 12px;
-    transition: color 0.3s ease;
+    padding: 6px 15px;
+    transition: all 0.3s ease;
 }
 
 
@@ -28,6 +35,7 @@
     flex-direction: column;
     line-height: 1.1;
 }
+
 
 .logo-main {
     font-size: 1.8rem;
