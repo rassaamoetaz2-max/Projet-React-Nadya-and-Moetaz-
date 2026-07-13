@@ -83,7 +83,8 @@ function Cart({ cart, setCart, user }) {
 
         <div className="map">
           <iframe
-            src="https://google.com" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51060.28738492221!2d10.271230399999999!3d36.88393739999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e2b55eaaa8ab8d%3A0xf308763817ce3bd0!2sEl%20Firma%20Restaurant!5e0!3m2!1sen!2stn!4v1783929474615!5m2!1sen!2stn"
+             allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin" 
             width="100%" 
             height="180px" 
             loading="lazy" 
