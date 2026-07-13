@@ -70,7 +70,7 @@ function FoodCard({isAnAdmin,key,food,addToCart,getList}) {
     <img src={food.image[0]}/>
     <h4>{food.price}DT</h4>
 
-    <div>{!isAdmin?<button onClick={()=>addToCart(food)}>Add To Cart</button>:""}</div>
+    <div>{!isAdmin?<button onClick={(e)=>{e.preventDefault(); addToCart(food)}}>Add To Cart</button>:""}</div>
 
     {isAdmin? (< div className='admin-buttons'><button onClick={()=>remove(food.id)}>Remove</button>
                 <button onClick={()=>afficher()}>Edit</button>
