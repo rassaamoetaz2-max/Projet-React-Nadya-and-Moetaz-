@@ -7,6 +7,8 @@ function Login({ mode, loginUser, createUser }) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
+    const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div>
       <LoginHeader></LoginHeader>
@@ -58,13 +60,37 @@ function Login({ mode, loginUser, createUser }) {
           </div>
 
           <div className="input-group">
-            <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+              <label>Password</label>
+              {/* Added a wrapper div for positioning */}
+              <div className="password-wrapper" style={{ position: "relative" }}>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  style={{ paddingRight: "60px", width: "100%", boxSizing: "border-box" }}
+                />
+                <button
+                  type="button"
+                  className="toggle-password-btn"
+                  onClick={() => setShowPassword(!showPassword)}
+                  style={{
+                    position: "absolute",
+                    right: "10px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    fontWeight: "bold",
+                    color: "#0066cc"
+                  }}
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
+            </div>
+
+           
 
           <button className="submit-btn">
             {mode === "login" ? "Login" : "Create Account"}
